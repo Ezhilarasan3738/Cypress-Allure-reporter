@@ -22,7 +22,7 @@ describe("Launch Web Application For Testing",()=>{
     })
 
     it("Verify Application  Launch Scuuceffully or not", function(){
-        cy.url().should('include','/index.php')
+        homePage.verifyPage()
         homePage.verifyLogoOnHomePage()
     })
 })
