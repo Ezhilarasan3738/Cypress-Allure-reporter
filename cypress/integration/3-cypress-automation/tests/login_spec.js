@@ -15,10 +15,11 @@ describe("Login Scenarios Test Creation", () => {
         })
     })
 
-    it("Login Funcationality and Verify Logged In User", function () {
+    it("Login Funcationality and Verify Logged In User Update", function () {
         loginPage.verifyPage()
         loginPage.userLogin(this.userRecords.Email, this.userRecords.Password)
         loginPage.verifyLoginUser(this.userRecords.UserName)
     })
 
+   
 })
