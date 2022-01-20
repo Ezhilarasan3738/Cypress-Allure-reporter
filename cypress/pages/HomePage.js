@@ -1,3 +1,5 @@
+import User, * as Constant from "../../constants/constant"
+import HomePageElement from "../../constants/constant"
 class HomePage {
 
     constructor() {
@@ -8,11 +10,12 @@ class HomePage {
     }
     
     verifyLogoOnHomePage() {
-        cy.get('#header_logo a img').should('be.visible')
+        cy.log(User.name)
+        cy.get(HomePageElement.HEADERLOGO).should('be.visible')
     }
 
     clickOnSignInButton(){
-        cy.get('.login').should('be.visible').click()
+        cy.get(HomePageElement.LOGINBUTTON).should('be.visible').click()
     }
 
 }
