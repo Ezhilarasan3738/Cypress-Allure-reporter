@@ -4,7 +4,10 @@
   "description": "This is for Cypress Test automation",
   "main": "index.js",
   "scripts": {
-    "cy:open": "cypress open"
+    "cypress:open": "cypress open",
+    "merge-report": "mochawesome-merge cypress/reports/*.json > cypress/reports/finalReport.json",
+    "mochawesome_generate_report": "marge cypress/reports/finalReport.json --reportDir ./ --inline",
+    "finalReport": "npm run merge-report && npm run mochawesome_generate_report"
   },
   "repository": {
     "type": "git",
@@ -17,6 +20,11 @@
   },
   "homepage": "https://github.com/niravpatel521/CY_Automation#readme",
   "devDependencies": {
-    "cypress": "^9.1.1"
+    "cypress": "^9.1.1",
+    "cypress-mochawesome-reporter": "^2.3.0",
+    "cypress-multi-reporters": "^1.5.0",
+    "mochawesome": "^7.0.1",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.0.1"
   }
 }
