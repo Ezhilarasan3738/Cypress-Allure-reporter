@@ -20,8 +20,8 @@
   },
   "homepage": "https://github.com/niravpatel521/CY_Automation#readme",
   "devDependencies": {
-    "cypress": "^9.5.4",
-    "cypress-mochawesome-reporter": "^2.3.0",
+    "cypress": "^10.8.0",
+    "cypress-mochawesome-reporter": "^3.2.2",
     "cypress-multi-reporters": "^1.5.0",
     "mochawesome": "^7.0.1",
     "mochawesome-merge": "^4.2.1",
