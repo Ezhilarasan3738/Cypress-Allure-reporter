@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+/// <reference types="@shelex/cypress-allure-plugin" />
 // ***********************************************************
 // This example plugins/index.js can be used to load plugins
 //
@@ -24,3 +25,4 @@ module.exports = (on, config) => {
 module.exports = (on, config) => {
   require('cypress-mochawesome-reporter/plugin')(on);
 };
+

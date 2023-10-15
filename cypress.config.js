@@ -1,4 +1,6 @@
-const { defineConfig } = require('cypress')
+const { defineConfig } = require('cypress');
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
+// import allureWriter from "@shelex/cypress-allure-plugin/writer";
 
 module.exports = defineConfig({
   projectId: 'amduvt',
@@ -9,18 +11,20 @@ module.exports = defineConfig({
   viewportHeight: 768,
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
-    reportDir: 'cypress/reports/html',
     charts: true,
     reportPageTitle: 'My Test Suite',
     embeddedScreenshots: true,
     inlineAssets: true,
+    saveAllAttempts: false
   },
   video: false,
   e2e: {
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
     setupNodeEvents(on, config) {
-      return require('./cypress/plugins/index.js')(on, config)
+      require('cypress-mochawesome-reporter/plugin')(on)
+      allureWriter(on, config);
+      return config;
     },
     baseUrl: 'http://automationpractice.com/',
   },
